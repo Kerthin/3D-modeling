@@ -45,7 +45,11 @@
 		cylinder.position.y		=	-300;
 		scene.add(cylinder);
 
-		
+		var sphereGeometry		=	new	THREE.SphereGeometry(60);
+		//var sphereTexture		=	new	THREE.MeshBasicMaterial({color:0x7fffb7});
+		var sphereTexture		=	new	THREE.MeshNormalMaterial();
+		var	sphere				=	new	THREE.Mesh(sphereGeometry,sphereTexture);
+		scene.add(sphere);
 
 		render					=	new	THREE.WebGLRenderer();		//	Метод рендеринга
 		render.setSize(window.innerWidth,window.innerHeight);
@@ -60,6 +64,8 @@
 			cube.rotation.z			+=	180/Math.PI*0.001;
 			cylinder.rotation.y		+=	180/Math.PI*0.0001;
 			cylinder.rotation.z		+=	180/Math.PI*0.001;
+			sphere.rotation.y		+=	180/Math.PI*0.0001;
+			sphere.rotation.z		+=	180/Math.PI*0.001;
 			render.render(scene,camera);
 		}
 
