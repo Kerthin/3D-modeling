@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		*	{
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript" src="js/libs/threeJs/three.min.js"></script>
+	<script type="text/javascript">
+		
+		var	scene,
+			camera,
+			render;
+		var	cubeGeometry,
+			cubeMaterial,
+			cube;
+		var cubeTexture,
+			loader;
+
+		init();
+		animation();
+
+		function init()	{
+
+			camera						=	new	THREE.PerspectiveCamera(70,window.innerWidth/window.innerHeight,0.1,10000);	//	Перспективная проекция
+			camera.position.z			=	1000;
+			scene						=	new	THREE.Scene();				//	Создание сцены
+
+			cubeGeometry				=	new	THREE.CubeGeometry(400,400,400,20,20,20);
+
+			cubeTexture					=	new	THREE.Texture();
+			loader						=	new	THREE.ImageLoader();
+
+			
+
+			//cubeMaterial				=	new THREE.MeshNormalMaterial();
+			cubeMaterial				=	new THREE.MeshBasicMaterial({map:cubeTexture,overdraw:true});
+			cube						=	new THREE.Mesh(cubeGeometry,cubeMaterial);
+
+			scene.add(cube);
+			
+			renderer					=	new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth,window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+		}
+
+		function	animation()	{
+			requestAnimationFrame(animation);
+			cube.rotation.y				+=	0.01;
+			cube.rotation.z				+=	0.01;
+			renderer.render(scene,camera);
+		}
+	</script>
+</body>
+</html>
