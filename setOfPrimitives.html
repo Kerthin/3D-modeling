@@ -31,7 +31,18 @@
 
 		scene				=	new	THREE.Scene();				//	Создание сцены
 
-		
+		var cubeGeometry	=	new	THREE.CubeGeometry(50,50,50);
+		var cubeTexture		=	new	THREE.MeshNormalMaterial();
+		var	group			=	new THREE.Object3D();
+
+		for(var	i=0;i<100;i++)	{
+			var	cube		=	new	THREE.Mesh(cubeGeometry,cubeTexture);
+			cube.position.x	=	Math.random()*700-350;
+			cube.position.y	=	Math.random()*700-350;
+			cube.position.z	=	Math.random()*900-450;
+			cube.rotation.z	=	Math.random()*360*180/Math.PI;
+			group.add(cube);
+		}
 		scene.add(group);
 
 		render				=	new	THREE.WebGLRenderer();		//	Метод рендеринга
