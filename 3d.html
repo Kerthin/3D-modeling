@@ -42,7 +42,7 @@
 		//var cylinderTexture	=	new	THREE.MeshBasicMaterial({color:0x7fffb7});
 		var cylinderTexture		=	new	THREE.MeshNormalMaterial();
 		var	cylinder			=	new	THREE.Mesh(cylinderGeometry,cylinderTexture);
-		
+		cylinder.position.y		=	-300;
 		scene.add(cylinder);
 
 
