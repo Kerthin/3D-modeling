@@ -32,7 +32,19 @@
 		camera.position.z			=	8000;
 
 		scene						=	new	THREE.Scene();
+		sphereGeometry				=	new	THREE.SphereGeometry(1500,100,100);
+		textureLoader				=	new	THREE.ImageLoader();
 		
+		textureLoader.onload		=	function(event)	{
+			texture.image			=	event.content;
+			texture.needsUpdate		=	true;
+		}
+
+		var sphereMaterial			=	new	THREE.MeshBasicMaterial({map: texture});
+		sphere						=	new	THREE.Mesh(sphereGeometry,sphereMaterial);
+		sphere.position.x			=	0;
+		sphere.position.y			=	0;
+		sphere.position.z			=	0;
 		scene.add(sphere);
 
 		render						=	new	THREE.WebGLRenderer();
