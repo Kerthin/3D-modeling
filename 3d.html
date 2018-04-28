@@ -29,6 +29,15 @@
 		camera.position.y		=	0;
 		camera.position.z		=	600;
 
+		scene					=	new	THREE.Scene();				//	Создание сцены
+
+		var cubeGeometry		=	new	THREE.CubeGeometry(100,100,100);
+		//var cubeTexture		=	new	THREE.MeshBasicMaterial({color:0x7fffb7});
+		var cubeTexture			=	new	THREE.MeshNormalMaterial();
+		var	cube				=	new	THREE.Mesh(cubeGeometry,cubeTexture);
+		
+		scene.add(cube);
+
 		
 
 		render					=	new	THREE.WebGLRenderer();		//	Метод рендеринга
