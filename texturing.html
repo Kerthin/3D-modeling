@@ -33,7 +33,11 @@
 
 			camera						=	new	THREE.PerspectiveCamera(70,window.innerWidth/window.innerHeight,0.1,10000);	//	Перспективная проекция
 			camera.position.z			=	1000;
+			scene						=	new	THREE.Scene();				//	Создание сцены
+
 			
+
+			scene.add(cube);
 			
 			renderer					=	new THREE.WebGLRenderer();
 			renderer.setSize(window.innerWidth,window.innerHeight);
