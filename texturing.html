@@ -35,7 +35,10 @@
 			camera.position.z			=	1000;
 			scene						=	new	THREE.Scene();				//	Создание сцены
 
+			cubeGeometry				=	new	THREE.CubeGeometry(400,400,400,20,20,20);
+
 			
+			cube						=	new THREE.Mesh(cubeGeometry,cubeMaterial);
 
 			scene.add(cube);
 			
