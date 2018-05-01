@@ -48,6 +48,10 @@
 		sphere.position.z			=	0;
 		scene.add(sphere);
 
+		render						=	new	THREE.WebGLRenderer();
+		render.setSize(window.innerWidth,window.innerHeight);
+		container.appendChild(render.domElement);
+
 
 		animate();
 
