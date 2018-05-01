@@ -43,7 +43,11 @@
 
 		var sphereMaterial			=	new	THREE.MeshBasicMaterial({map: texture});
 		sphere						=	new	THREE.Mesh(sphereGeometry,sphereMaterial);
-		
+		sphere.position.x			=	0;
+		sphere.position.y			=	0;
+		sphere.position.z			=	0;
+		scene.add(sphere);
+
 
 		animate();
 
