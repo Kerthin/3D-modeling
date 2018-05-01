@@ -36,6 +36,11 @@
 		texture						=	new	THREE.TextureLoader().load('img/lava.jpg');
 		textureLoader				=	new	THREE.ImageLoader();
 		
+		textureLoader.onload		=	function(event)	{
+			texture.image			=	event.content;
+			texture.needsUpdate		=	true;
+		}
+
 		
 
 		animate();
