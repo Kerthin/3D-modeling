@@ -29,7 +29,8 @@
 		scene.add(light);
 
 		var plane	=	new	THREE.Mesh(new	THREE.PlaneGeometry(400,200,100,100),	new THREE.MeshLambertMaterial({color:0x008cf0}));
-		
+		plane.rotation.x	=	-Math.PI/2;
+		plane.position.y	=	-85;
 
 		animate();
 
