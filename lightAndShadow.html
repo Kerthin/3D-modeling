@@ -34,6 +34,12 @@
 		plane.receiveShadow	=	true;
 		scene.add(plane);
 
+		var cube	=	new THREE.Mesh(new	THREE.CubeGeometry(50,50,50,10,10,10),	new	THREE.MeshLambertMaterial({color:0x42aaff}));
+		cube.position.y	=	-60;
+		cube.castShadow	=	true;
+		cube.receiveShadow	=	true;
+		scene.add(cube);
+
 
 		animate();
 
