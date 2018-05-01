@@ -52,12 +52,13 @@
 		render.setSize(window.innerWidth,window.innerHeight);
 		container.appendChild(render.domElement);
 
+		
 
 		animate();
 
 		function animate()	{
 			requestAnimationFrame(animate);
-			
+			sphere.rotation.y		+=	0.003;
 			render.render(scene,camera);
 		}
 
