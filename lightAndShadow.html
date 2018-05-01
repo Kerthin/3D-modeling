@@ -14,13 +14,13 @@
 			render;
 		var	container;
 
-		
+		container	=	document.createElement('div');
+		document.body.appendChild(container);
 
 		animate();
 
 		function	animate()	{
 			requestAnimationFrame(animate);
-			
 			render.render(scene,camera);
 		}
 	</script>
