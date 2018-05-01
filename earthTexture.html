@@ -23,8 +23,11 @@
 			sphereMaterial,
 			sphere;
 		var	container;
-		
+		container					=	document.createElement('div');
+		document.body.appendChild(container);
 
+		camera						=	new THREE.PerspectiveCamera(65,window.innerWidth/window.innerHeight,0.1,10000);
+		
 		animate();
 
 		function animate()	{
