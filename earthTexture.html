@@ -41,6 +41,8 @@
 			texture.needsUpdate		=	true;
 		}
 
+		var sphereMaterial			=	new	THREE.MeshBasicMaterial({map: texture});
+		sphere						=	new	THREE.Mesh(sphereGeometry,sphereMaterial);
 		
 
 		animate();
