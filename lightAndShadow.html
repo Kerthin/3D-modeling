@@ -40,6 +40,11 @@
 		cube.receiveShadow	=	true;
 		scene.add(cube);
 
+		render	=	new	THREE.WebGLRenderer();
+		render.shadowMap.enabled	=	true;
+
+		render.setSize(document.body.clientWidth,document.body.clientHeight);
+		container.appendChild(render.domElement);
 
 		animate();
 
